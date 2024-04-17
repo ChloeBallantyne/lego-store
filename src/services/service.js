@@ -13,9 +13,9 @@ import { db } from "../config/firestore";
 export const getAllSets = async () => {
   const collectionRef = collection(db, "lego-sets");
   const snapshot = await getDocs(collectionRef);
-  console.log(snapshot.docs);
+  //console.log(snapshot.docs);
   return snapshot.docs.map((doc) => {
-    console.log(doc.data());
+    //console.log(doc.data());
     return { id: doc.id, ...doc.data() };
   });
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import SetCard from "../../components/SetCard/SetCard";
 import { getAllSets } from "../../services/service";
 import { useEffect } from "react";
+import styles from "./SetsPage.module.scss";
 
 const SetsPage = () => {
   const [sets, setSets] = useState([]);
@@ -11,12 +12,14 @@ const SetsPage = () => {
       .then((data) => setSets(data))
       .catch((e) => console.warn(e.message));
   }, []);
-
   return (
     <main>
       {/* TODO: create heading component */}
-      <h1>Lego Store</h1>
-      <section>
+      <div className={styles.head}>
+        <h1>Lego Store</h1>
+      </div>
+
+      <section className={styles.page}>
         {sets.map((set) => {
           return <SetCard key={set.id} set={set} />;
         })}
