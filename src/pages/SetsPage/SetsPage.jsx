@@ -14,11 +14,6 @@ const SetsPage = () => {
   }, []);
   return (
     <main>
-      {/* TODO: create heading component */}
-      <div className={styles.head}>
-        <h1>Lego Store</h1>
-      </div>
-
       <section className={styles.page}>
         {sets.map((set) => {
           return <SetCard key={set.id} set={set} />;

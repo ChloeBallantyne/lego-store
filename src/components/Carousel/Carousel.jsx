@@ -2,6 +2,7 @@ import React from "react";
 import CarouselItem from "../CarouselItem/CarouselItem";
 import { useState, useEffect } from "react";
 import { getAllSets } from "../../services/service";
+import styles from "./Carousel.module.scss";
 
 const Carousel = () => {
   const [sets, setSets] = useState([]);
@@ -31,9 +32,14 @@ const Carousel = () => {
   console.log(favSets);
   return (
     <div>
-      <button onClick={decreaseSet}>left</button>
-      <CarouselItem set={favSets[setNumber]} />
-      <button onClick={increaseSet}>right</button>
+      <div>
+        <h3>Featured Products</h3>
+      </div>
+      <div className={styles.carousel}>
+        <button onClick={decreaseSet}>&#8592;</button>
+        <CarouselItem set={favSets[setNumber]} />
+        <button onClick={increaseSet}>&#8594;</button>
+      </div>
     </div>
   );
 };
