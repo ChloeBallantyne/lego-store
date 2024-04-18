@@ -19,3 +19,12 @@ export const getAllSets = async () => {
     return { id: doc.id, ...doc.data() };
   });
 };
+
+export const getSetById = async () => {
+  const docRef = doc(db, "lego-sets", id);
+  const snapshot = await getDoc(docRef);
+  if(!snapshot.exists()) {
+    throw new Error ("Could not find set with id " + id);
+  }
+  return { id: snapshot.id, ...snapshot.data() };
+}
