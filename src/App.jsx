@@ -1,13 +1,16 @@
-import SetsPage from "./pages/SetsPage/SetsPage";
-import Carousel from "./components/Carousel/Carousel";
-import Heading from "./components/Heading/Heading";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import SetLoader from "./containers/SetLoader/SetLoader";
 
 function App() {
   return (
     <>
-      <Heading />
-      <Carousel />
-      <SetsPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/:id" element={<SetLoader />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -29,7 +29,7 @@ const Carousel = () => {
     }
   };
   const favSets = sets.filter((set) => set.favourite);
-  console.log(favSets);
+  //console.log(favSets);
   return (
     <div>
       <div>

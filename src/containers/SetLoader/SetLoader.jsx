@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSetById } from "../../services/service";
+import SetPage from "../../pages/SetPage/SetPage";
 
 const SetLoader = () => {
   const { id } = useParams();
