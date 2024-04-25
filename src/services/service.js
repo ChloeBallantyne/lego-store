@@ -28,3 +28,8 @@ export const getSetById = async (id) => {
   }
   return { id: snapshot.id, ...snapshot.data() };
 };
+
+export const updateSetById = async (id, data) => {
+  const docRef = doc(db, "lego-sets", id);
+  await updateDoc(docRef, data);
+};

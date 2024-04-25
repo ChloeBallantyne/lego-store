@@ -21,6 +21,7 @@ const Carousel = () => {
       setSetNumber(setNumber - 1);
     }
   };
+
   const increaseSet = () => {
     if (setNumber === 2) {
       setSetNumber(0);
@@ -28,12 +29,13 @@ const Carousel = () => {
       setSetNumber(setNumber + 1);
     }
   };
+
   const favSets = sets.filter((set) => set.favourite);
-  //console.log(favSets);
+
   return (
     <div>
       <div>
-        <h3>Featured Products</h3>
+        <h3 className={styles["carousel-heading"]}>Featured Products</h3>
       </div>
       <div className={styles.carousel}>
         <button onClick={decreaseSet}>&#8592;</button>

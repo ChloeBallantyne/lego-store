@@ -1,9 +1,28 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SetPage.module.scss";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { getSetById } from "../../services/service";
 
 const SetPage = ({ set }) => {
-  // const navigate = useNavigate();
+  const { id } = useParams();
+  const [fav, setFav] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (id) {
+      getSetById(id).then(setFav).catch(setError);
+    }
+  }, [id]);
+
+  const onSubmit = (data) => {
+    updateSetById(id, data)
+      .then(() => {
+        navigate("/");
+      })
+      .catch(setError);
+  };
 
   return (
     <main>
@@ -19,6 +38,9 @@ const SetPage = ({ set }) => {
         </div>
       </div>
       <h5>Release: {set.release}</h5>
+      <form>
+        <input type="submit" value="Favourite" onSubmit={onSubmit} />
+      </form>
     </main>
   );
 };

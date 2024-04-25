@@ -23,11 +23,10 @@ const SetLoader = () => {
 
   return (
     <>
-      {/* TODO: create loading component */}
       {fetchStatus === "LOADING" && <p>Loading...</p>}
-      {/* TODO: Create error component */}
+
       {fetchStatus === "FAILED" && <p>{error.message}</p>}
-      {/* TODO: Create set page */}
+
       {fetchStatus === "SUCCESS" && <SetPage set={set} />}
     </>
   );
