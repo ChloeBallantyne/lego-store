@@ -6,6 +6,7 @@ const SetCard = ({ set, addToCart }) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleAddToCart = () => {
+    stopPropergation();
     addToCart({ ...set, quantity });
     setQuantity(1);
   };
@@ -16,12 +17,6 @@ const SetCard = ({ set, addToCart }) => {
         <img src={set.imageLink} alt={set.name} />
         <h2>{set.name}</h2>
         <h3>${set.price}</h3>
-        <input
-          type="number"
-          min="1"
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-        />
         <button onClick={handleAddToCart}>Add to Cart</button>
       </article>
     </Link>

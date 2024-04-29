@@ -1,10 +1,11 @@
 import React from "react";
 import Heading from "../../components/Heading/Heading";
 import Carousel from "../../components/Carousel/Carousel";
-import SetsPage from "../SetsPage/SetsPage";
 import SetCard from "../../components/SetCard/SetCard";
 import { useState, useEffect } from "react";
 import { getAllSets } from "../../services/service";
+import SetLoader from "../../containers/SetLoader/SetLoader";
+import SetsPage from "../SetsPage/SetsPage";
 
 const LandingPage = ({ addToCart }) => {
   const [sets, setSets] = useState([]);
@@ -20,11 +21,7 @@ const LandingPage = ({ addToCart }) => {
       <Heading />
       <Carousel />
       <main>
-        <section>
-          {sets.map((set) => {
-            return <SetCard key={set.id} set={set} addToCart={addToCart} />;
-          })}
-        </section>
+        <SetsPage />
       </main>
     </>
   );

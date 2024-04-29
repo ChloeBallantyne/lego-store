@@ -14,11 +14,11 @@ const SetsPage = () => {
   }, []);
   return (
     <main>
-      <section className={styles.page}>
+      <div className={styles.page}>
         {sets.map((set) => {
           return <SetCard key={set.id} set={set} />;
         })}
-      </section>
+      </div>
     </main>
   );
 };
