@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import styles from "./SetCard.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const SetCard = ({ set, addToCart }) => {
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
 
-  const handleAddToCart = () => {
-    stopPropergation();
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     addToCart({ ...set, quantity });
     setQuantity(1);
+    navigate("/cart");
   };
 
   return (

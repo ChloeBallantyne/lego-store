@@ -4,7 +4,6 @@ import Carousel from "../../components/Carousel/Carousel";
 import SetCard from "../../components/SetCard/SetCard";
 import { useState, useEffect } from "react";
 import { getAllSets } from "../../services/service";
-import SetLoader from "../../containers/SetLoader/SetLoader";
 import SetsPage from "../SetsPage/SetsPage";
 
 const LandingPage = ({ addToCart }) => {
@@ -19,9 +18,9 @@ const LandingPage = ({ addToCart }) => {
   return (
     <>
       <Heading />
-      <Carousel />
+      <Carousel sets={sets} />
       <main>
-        <SetsPage />
+        <SetsPage sets={sets} addToCart={addToCart} />
       </main>
     </>
   );

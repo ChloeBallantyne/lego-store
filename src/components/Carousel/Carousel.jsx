@@ -1,18 +1,10 @@
 import React from "react";
 import CarouselItem from "../CarouselItem/CarouselItem";
-import { useState, useEffect } from "react";
-import { getAllSets } from "../../services/service";
+import { useState } from "react";
 import styles from "./Carousel.module.scss";
 
-const Carousel = () => {
-  const [sets, setSets] = useState([]);
+const Carousel = ({sets}) => {
   const [setNumber, setSetNumber] = useState(0);
-
-  useEffect(() => {
-    getAllSets()
-      .then((data) => setSets(data))
-      .catch((e) => console.warn(e.message));
-  }, []);
 
   const decreaseSet = () => {
     if (setNumber === 0) {
