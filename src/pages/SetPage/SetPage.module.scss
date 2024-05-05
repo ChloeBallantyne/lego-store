@@ -1,0 +1,24 @@
+.wrapper1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  img {
+    width: 50%;
+    max-width: 300px;
+  }
+
+  .wrapper2 {
+    width: 45%;
+    max-width: 300px;
+
+    h5 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+}
