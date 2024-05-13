@@ -2,6 +2,7 @@
 
 ## Overview
 Lego Store is an e-commerce web application developed using React. The project aims to provide users with a platform to browse and purchase Lego sets. It includes features such as viewing featured products, adding sets to cart, viewing cart items, and marking sets as favorites.
+### Deployed: https://cjb-legostore.netlify.app/
 
 ## Components
 
