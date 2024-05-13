@@ -5,6 +5,7 @@ import SetCard from "../../components/SetCard/SetCard";
 import { useState, useEffect } from "react";
 import { getAllSets } from "../../services/service";
 import SetsPage from "../SetsPage/SetsPage";
+import { addSetsToDB } from "../../services/service";
 
 const LandingPage = ({ addToCart }) => {
   const [sets, setSets] = useState([]);
@@ -21,6 +22,7 @@ const LandingPage = ({ addToCart }) => {
       <Carousel sets={sets} />
       <main>
         <SetsPage sets={sets} addToCart={addToCart} />
+        {/* <button onClick={addSetsToDB}>Add Sets</button> */}
       </main>
     </>
   );

@@ -9,6 +9,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "../config/firestore";
+import { data } from "../../dbobjects";
 
 export const getAllSets = async () => {
   const collectionRef = collection(db, "lego-sets");
@@ -32,4 +33,17 @@ export const getSetById = async (id) => {
 export const updateSetById = async (id, data) => {
   const docRef = doc(db, "lego-sets", id);
   await updateDoc(docRef, data);
+};
+
+export const addSetsToDB = async () => {
+  const collectionRef = collection(db, "lego-sets");
+
+  try {
+    data.forEach(async (obj) => {
+      const docRef = await addDoc(collectionRef, obj);
+    });
+  } catch (e) {
+    console.warn(e);
+    throw e;
+  }
 };
