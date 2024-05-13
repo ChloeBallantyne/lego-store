@@ -1,24 +1,15 @@
-.wrapper1 {
+.main {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  width: 70%;
+  padding: 10px;
+}
 
-  img {
-    width: 50%;
-    max-width: 300px;
-  }
-
-  .wrapper2 {
-    width: 45%;
-    max-width: 300px;
-
-    h5 {
-      margin-bottom: 10px;
-    }
-
-    p {
-      line-height: 1.5;
-    }
-  }
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -30,8 +30,14 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage addToCart={addToCart} />} />
           <Route path="/:id" element={<SetLoader />} />
-          <Route path="/cart" element={<Cart cartItems={cartItems} />} />
-          <Route path="/favourites" element={<FavouritesPage />} />
+          <Route
+            path="/cart"
+            element={<Cart cartItems={cartItems} addToCart={addToCart} />}
+          />
+          <Route
+            path="/favourites"
+            element={<FavouritesPage addToCart={addToCart} />}
+          />
         </Routes>
       </BrowserRouter>
     </>

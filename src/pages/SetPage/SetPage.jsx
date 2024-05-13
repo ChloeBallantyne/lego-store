@@ -20,7 +20,7 @@ const SetPage = ({ set }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    updateSetById(id, {...set, favourite: !set.favourite})
+    updateSetById(id, { ...set, favourite: !set.favourite })
       .then(() => {
         navigate("/favourites");
       })
@@ -28,23 +28,25 @@ const SetPage = ({ set }) => {
   };
 
   return (
-    <main>
-      <h1>{set.name}</h1>
-      <h3>Price: ${set.price}</h3>
-      <h5>SKU: {set.sku}</h5>
-      <h5>Quantity: {set.quantity}</h5>
-      <div className={styles.wrapper1}>
+    <div className={styles.wrapper}>
+      <main className={styles.main}>
+        <h1>{set.name}</h1>
+        <h3>Price: ${set.price}</h3>
+        <h5>SKU: {set.SKU}</h5>
+        <h5>Quantity: {set.quantity}</h5>
         <img src={set.imageLink} alt={set.name} />
-        <div className={styles.wrapper2}>
-          <h5>Description:</h5>
-          <p>{set.description}</p>
-        </div>
-      </div>
-      <h5>Release: {set.release}</h5>
-      <form onSubmit={onSubmit}>
-        {set.favourite? <input type="submit" value="Un-Favourite" /> : <input type="submit" value="Favourite" />}
-      </form>
-    </main>
+        <h5>Release: {set.release}</h5>
+        <h5>Description:</h5>
+        <p>{set.description}</p>
+        <form onSubmit={onSubmit}>
+          {set.favourite ? (
+            <input type="submit" value="Un-Favourite" />
+          ) : (
+            <input type="submit" value="Favourite" />
+          )}
+        </form>
+      </main>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import CarouselItem from "../CarouselItem/CarouselItem";
 import { useState } from "react";
 import styles from "./Carousel.module.scss";
 
-const Carousel = ({sets}) => {
+const Carousel = ({ sets }) => {
   const [setNumber, setSetNumber] = useState(0);
 
   const decreaseSet = () => {
@@ -26,8 +26,8 @@ const Carousel = ({sets}) => {
 
   return (
     <div>
-      <div>
-        <h3 className={styles["carousel-heading"]}>Featured Products</h3>
+      <div className={styles["carousel-heading"]}>
+        <h3>Featured Products</h3>
       </div>
       <div className={styles.carousel}>
         <button onClick={decreaseSet}>&#8592;</button>

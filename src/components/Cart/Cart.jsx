@@ -1,6 +1,7 @@
 import React from "react";
+import SetCard from "../SetCard/SetCard";
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, addToCart }) => {
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   console.log(cartItems);
@@ -8,13 +9,8 @@ const Cart = ({ cartItems }) => {
   return (
     <div>
       <h2>Cart ({totalItems})</h2>
-      {cartItems.map((item) => {
-        console.log(item);
-        return (
-          <p>
-            {item.name} x {item.quantity}
-          </p>
-        );
+      {cartItems.map((set) => {
+        return <SetCard addToCart={addToCart} key={set.id} set={set} />;
       })}
     </div>
   );

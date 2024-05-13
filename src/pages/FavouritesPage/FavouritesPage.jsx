@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getAllSets } from "../../services/service";
 import SetCard from "../../components/SetCard/SetCard";
 
-const FavouritesPage = () => {
+const FavouritesPage = ({ addToCart }) => {
   const [favSets, setFavSets] = useState([]);
 
   useEffect(() => {
@@ -17,11 +17,9 @@ const FavouritesPage = () => {
   return (
     <div>
       <h2>Favourites Page</h2>
-      <section>
-        {favSets.map((set) => (
-          <p>{set.name}</p>
-        ))}
-      </section>
+      {favSets.map((set) => {
+        return <SetCard addToCart={addToCart} key={set.id} set={set} />;
+      })}
     </div>
   );
 };

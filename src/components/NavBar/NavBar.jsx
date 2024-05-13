@@ -6,12 +6,14 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <Link to="/">Lego Store</Link>
+        <Link to="/">LEGO Store</Link>
       </div>
       <div className={styles.links}>
         <Link to="/">Sets</Link>
         <Link to="/favourites">Favourites</Link>
-        <Link to="/cart">Cart</Link>
+        <Link className={styles.cartbtn} to="/cart">
+          Cart
+        </Link>
       </div>
     </nav>
   );

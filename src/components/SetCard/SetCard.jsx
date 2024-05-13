@@ -16,14 +16,12 @@ const SetCard = ({ set, addToCart }) => {
   };
 
   return (
-    <Link to={set.id}>
-      <article className={styles.card}>
-        <img src={set.imageLink} alt={set.name} />
-        <h2>{set.name}</h2>
-        <h3>${set.price}</h3>
-        <button onClick={handleAddToCart}>Add to Cart</button>
-      </article>
-    </Link>
+    <article className={styles.card}>
+      <img src={set.imageLink} alt={set.name} />
+      <h2>{set.name}</h2>
+      <h3>${set.price}</h3>
+      <button onClick={handleAddToCart}>Add to Cart</button>
+    </article>
   );
 };
 
